@@ -1,78 +1,34 @@
 <!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=windows-1252">
-<title>Seminar on Algebraic Geometry and Ramification</title>
+<title>Seminar on Analysis and PDE in Tongji</title>
 
 </head><body>
 
-<h1>Seminar on Algebraic Geometry and Ramification</h1>
+<h1> Seminar on Analysis and PDE </h1>
 
 <h2>Organizers</h2>
 <p>
-<a href="https://fangzhoujin.github.io/">Fangzhou Jin</a>, <a href="http://math.hnu.edu.cn/info/1028/3587.htm">Peng Sun</a>, <a href="https://www.math.pku.edu.cn/teachers/yangenlin/ely.htm">Enlin Yang</a>, <a href="https://en.westlake.edu.cn/academics/School_of_Science/Mathematics/Our_Faculty/201912/t20191215_2900.shtml">Yigeng Zhao</a>
+<a href="https://xinzhang-pde.github.io/">Xin Zhang</a>
 </p>
 
 <h2>Upcoming talks</h2>
 
-<p>
-Christophe Levrat (T&eacute;l&eacute;com Paris): Computing the cohomology of constructible sheaves on curves <br>
-2022-10-05 16:00-17:00 <br>
-Zoom Id:895 7231 2907 Password:666910<br>
-Given a curve X over an algebraically closed field, and an integer n invertible on X, the cohomology groups of constructible sheaves of Z/nZ-modules on X are finite. In this talk, I will give a completely explicit description of the cohomology complex of (complexes of) such sheaves in the case where X is smooth or nodal, as well as a description of the cup-products in the cohomology of finite locally constant sheaves on X when X is furthermore projective. I will give a detailed example to show that one can actually compute this cohomology complex using tools which - in a few very specific cases - are already implemented in current computer algebra systems. <br>
-</p>
+
 
 
 <h2>Past talks</h2>
 
 <p>
-Ziyang Gao (Leibniz Universit&auml;t Hannover): Torsion points in families of abelian varieties <br>
-2022-09-28 16:30-17:30 <br>
-Tencent Meeting:445-898-729 Password:072938 <br>
-Given an abelian scheme defined over \IQbar and an irreducible subvariety X which dominates the base, the Relative Manin-Mumford Conjecture (inspired by S. Zhang and proposed by Zannier) predicts how torsion points in closed fibers lie on X. The conjecture says that if such torsion points are Zariski dense in X, then the dimension of X is at least the relative dimension of the abelian scheme, unless X is contained in a proper subgroup scheme. In this talk, I will present a proof of this conjecture. As a consequence this gives a new proof of the Uniform Manin-Mumford Conjecture for curves (recently proved by K&uuml;hne) without using equidistribution. This is joint work with Philipp Habegger. <br>
+ Yanlin Liu (Beijing Normal University): Long-time asymptotics of 3-D axisymmetric Navier-Stokes equations in critical spaces <br>
+June 3rd, 2021 13:50-14:50 <br>
+Room 108, Zhiyuan Buildinig <br>
+We show that any unique global solution (here we do not require any smallness condition beforehand) to 3-D axisymmetric Navier-Stokes equations in some scaling invariant spaces must eventually become a small solution. In particular, we show that the limits of $\|\omega^\theta(t)/r\|_{L^1}$ and $\|u^\theta(t)/\sqrt r\|_{L^2}$ are all $0$ as $t$ tends to infinity. And by using this, we can refine some decay estimates for the axisymmetric solutions.<br>
 </p>
 
-<p>
-Xiaoyu Su (Tsinghua University): Parabolic Hitchin System and Mirror Symmetry <br>
-2022-08-08 10:00-11:00 <br>
-Tencent Meeting:909-888-873 Password:235711 <br>
-A very important class of hyperkaehler mirror partners are moduli spaces of SL_r and PGL_r-Higgs bundles. Hausel and Thaddeus proved that the moduli spaces of SL_r and PGL_r-Higgs bundles on a smooth projective curve are mirror partners in the sense of Strominger-Yau-Zaslow [SYZ96] (i.e. generic fibers are dual abelian varieties). Inspired by the SYZ philosophy, Hausel-Thaddeus in [HT01, HT03] conjectured that the moduli spaces of SL_r and PGL_r-Higgs bundles over both smooth and parabolic curves are topological mirror partners (i.e. have equal stringy Hodge numbers) and proved this for r=2,3. On the other hand, a very recent paper by Groechenig-Wyss-Ziegler [GWZ20] uses p-adic integration to prove Hausel and Thaddeus' topological mirror symmetry conjecture holds over a smooth projective curve. <br>
-In this talk we will talk about our recent work on the topological mirror symmetry conjecture for moduli of Higgs bundles over parabolic curves. We will first review the concept of mirror symmetry and in particular in the since of Strominger-Yau-Zaslow and Hausel-Thaddeus. Then we will talk about our way to check the SYZ and topological mirror symmetry partners property for moduli of Higgs bundles over a parabolic curve. This is a joint work with Xueqing Wen and Bin Wang.<br>
-</p>
 
-<p>
-Sabrina Pauli (University of Duisburg-Essen): The B&eacute;zoutian and the A1-degree <br>
-2022-07-25 16:00-17:00 <br>
-Zoom Id:831 2409 6013 Password:791738<br>
-Morel's A1-degree is the analogue of the Brouwer degree in A1-homotopy theory.
-It is the key input in A1-enumerative geometry, that is enumerative geometry over an arbitrary field where answers are valued in the Grothendieck-Witt ring of the field. In the talk I will give a brief introduction to the A1-degree and its applications and present formulas to compute it including a formula using the multivariate B&eacute;zoutian. This is based on joint work with Thomas Brazelton and Stephen McKean. <br>
-</p>
 
-<p>
-Heng Xie (Sun Yat-Sen University): Cohomology of spinor varieties via blow-ups <br>
-2022-05-20 14:00-15:00 <br>
-Tencent Meeting:534-704-254 Password:235711<br>
-I will talk about spinor varieties, which are certain closed subschemes inside Grassmann bundles defined by a non-degenerate quadratic form. We consider the blow-up of a spinor variety along a spinor sub-variety, which helps us to compute the oriented cohomology theory (e.g. K-theory and Chow groups) of spinor varieties, and Witt groups in the non-oriented setting.<br>
-</p>
 
-<p>
-Yigeng Zhao (Westlake University): A relative twist formula of epsilon factors <br>
-2022-05-13 14:00-15:00 <br>
-Tencent Meeting:494-628-807 Password:235711<br>
-For an l-adic sheaf on a smooth variety, its epsilon factor is the constant term in the functional equation of its L-function. In this talk, we review the product and twist formulas of epsilon factors in the light of the developments in geometric ramification theory, and suggest a generalization in the relative case. This is a joint work in progress with Enlin Yang.<br>
-</p>
 
-<p>
-Xucheng Zhang (University of Duisburg-Essen): Existence of Good Moduli Space of Vector Bundles <br>
-2022-03-16 17:00-18:00 <br>
-Zoom Id:630 7871 3736 Password:188978<br>
-We prove that, among all open substacks of moduli stacks of rank 2 bundles over a curve, the open substack of semi-stable bundles is the unique maximal one that admits a separated good moduli space. One example in rank 3 case shows that a similar phenomenon does not hold in higher rank case and also suggests a general formulation.<br>
-</p>
-
-<p>
-Xiping Zhang (Tongji University): Local Euler Obstructions of Projective Reflective Varieties <br>
-2022-02-24 10:00-11:00 <br>
-Tencent Meeting:225-158-631 Password:235711<br>
-The local Euler Obstructions are very important local invariants in the study of stratified singular spaces, but are very hard to compute in general. In this talk I will discuss projective reflective varieties. These are stratified projective varieties such that the dual varieties of the strata have certain dimension constraints. I will show that for such varieties these local invariants are completely determined by their Chern classes, followed by some explicitly computed examples.<br>
-</p>
 
 
