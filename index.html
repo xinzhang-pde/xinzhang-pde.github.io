@@ -1,175 +1,779 @@
-<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>Xin Zhang's personal page</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xin Zhang | Tongji University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fafaf9;
+            --surface: #ffffff;
+            --text: #1c1917;
+            --text-secondary: #78716c;
+            --text-muted: #a8a29e;
+            --border: #e7e5e4;
+            --accent: #44403c;
+            --accent-light: #f5f5f4;
+            --link: #57534e;
+            --link-hover: #0c0a09;
+            --badge-bg: #f5f5f4;
+            --badge-text: #57534e;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        }
 
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0c0a09;
+                --surface: #1c1917;
+                --text: #fafaf9;
+                --text-secondary: #a8a29e;
+                --text-muted: #78716c;
+                --border: #292524;
+                --accent: #d6d3d1;
+                --accent-light: #292524;
+                --link: #d6d3d1;
+                --link-hover: #fafaf9;
+                --badge-bg: #292524;
+                --badge-text: #d6d3d1;
+                --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+                --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Hero */
+        .hero {
+            padding: 80px 0 48px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-inner {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--surface);
+            box-shadow: var(--shadow-md);
+            flex-shrink: 0;
+            background: var(--accent-light);
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero .title {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .hero .affiliation {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-light);
+            transform: translateY(-1px);
+        }
+
+        /* Sections */
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+            margin-left: 4px;
+        }
+
+        /* About */
+        .about-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .about-text p + p {
+            margin-top: 12px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px 16px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-grid .label {
+            color: var(--text-muted);
+            font-weight: 500;
+            text-align: right;
+        }
+
+        /* Research */
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            border-radius: 4px;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Papers */
+        .paper-list {
+            list-style: none;
+        }
+
+        .paper-item {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 16px;
+        }
+
+        .paper-item:last-child {
+            border-bottom: none;
+        }
+
+        .paper-number {
+            font-family: 'Source Serif 4', serif;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            min-width: 28px;
+            text-align: right;
+            padding-top: 2px;
+        }
+
+        .paper-content {
+            flex: 1;
+        }
+
+        .paper-title {
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .paper-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .paper-journal {
+            font-style: italic;
+            color: var(--text);
+        }
+
+        .paper-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-left: 8px;
+        }
+
+        .badge-submitted {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-published {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .badge-submitted { background: #451a03; color: #fcd34d; }
+            .badge-published { background: #052e16; color: #86efac; }
+        }
+
+        /* Teaching */
+        .teaching-item {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .teaching-item:last-child {
+            border-bottom: none;
+        }
+
+        .teaching-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .teaching-name {
+            font-weight: 500;
+        }
+
+        .teaching-term {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: 'Source Serif 4', serif;
+        }
+
+        .teaching-detail {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Students */
+        .student-group {
+            margin-bottom: 20px;
+        }
+
+        .student-group h4 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .student-list {
+            list-style: none;
+        }
+
+        .student-item {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .student-name {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .student-status {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Events */
+        .event-list {
+            list-style: none;
+        }
+
+        .event-item {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .event-item:last-child {
+            border-bottom: none;
+        }
+
+        .event-item a {
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .hero-inner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .contact-grid .label {
+                text-align: left;
+                margin-top: 8px;
+            }
+
+            .paper-item {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .paper-number {
+                text-align: left;
+            }
+
+            .teaching-header {
+                flex-direction: column;
+                gap: 2px;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Print */
+        @media print {
+            .social-links a { border: 1px solid #ccc; }
+            body { background: white; color: black; }
+        }
+    </style>
 </head>
-  
- <div style="width:990px" > 
- <body>
+<body>
 
-<h1>Xin Zhang (<a href="https://math.tongji.edu.cn/info/1127/8229.htm">张鑫</a>)</h1>
-<p>I am currently a tenure-track Associate Professor at <a href="https://math.tongji.edu.cn/">School of Mathematical Sciences</a>, Tongji University, Shanghai.
-  Before joining Tongji, I was a postdoctoral researcher in Research Institute for Science and Engineering (理工学術院総合研究所), Waseda University (早稲田大学), 
-  working under Prof. <a href="http://www.fluid.sci.waseda.ac.jp/shibata/top.html"> Shibata Yoshihiro </a>(柴田 良弘).
-  I obtained my PhD in mathematics in September 2017 from Université Paris-Est Créteil Val-de-Marne, under the supervision of Prof. 
-  <a href="https://perso.math.u-pem.fr/danchin.raphael/"> Danchin Raphaël </a>.
-  </p>
- 
+    <div class="container">
+        <!-- Hero -->
+        <header class="hero">
+            <div class="hero-inner">
+                <!-- 请替换为您的个人照片 -->
+                <img src="https://via.placeholder.com/140" alt="Xin Zhang" class="avatar" id="avatar">
+                
+                <div class="hero-content">
+                    <h1>Xin Zhang</h1>
+                    <p class="title">
+                        Tenure-track Associate Professor<br>
+                        School of Mathematical Sciences, Tongji University
+                    </p>
+                    <p class="affiliation">
+                        Nonlinear PDEs &middot; Fluid Dynamics &middot; Free Boundary Problems
+                    </p>
+                    <div class="social-links">
+                        <a href="mailto:xinzhang2020@tongji.edu.cn">Email</a>
+                        <!-- 请替换为实际链接 -->
+                        <a href="#" target="_blank">Google Scholar</a>
+                        <a href="#" target="_blank">arXiv</a>
+                        <a href="#" target="_blank">ORCID</a>
+                        <a href="https://math.tongji.edu.cn" target="_blank">Department</a>
+                    </div>
+                </div>
+            </div>
+        </header>
 
- 
+        <!-- About -->
+        <section id="about">
+            <h2 class="section-title">About</h2>
+            <div class="about-text">
+                <p>
+                    I am currently a tenure-track Associate Professor at the School of Mathematical Sciences, Tongji University, Shanghai.
+                    Before joining Tongji, I was a postdoctoral researcher at the Research Institute for Science and Engineering, Waseda University,
+                    working under Prof. Shibata Yoshihiro.
+                </p>
+                <p>
+                    I obtained my PhD in mathematics in September 2017 from Université Paris-Est Créteil Val-de-Marne,
+                    under the supervision of Prof. Danchin Raphaël.
+                </p>
+            </div>
+            
+            <div class="contact-grid">
+                <span class="label">Office</span>
+                <span>Ningjing Building 203, Siping Road 1239, Shanghai 200092, China</span>
+                <span class="label">Email</span>
+                <span><a href="mailto:xinzhang2020@tongji.edu.cn">xinzhang2020@tongji.edu.cn</a></span>
+            </div>
+        </section>
 
-  
-  
-<h2>Address</h2>
-<table>
-<tr><td>School of Mathematical Sciences, Tongji University,</td></tr>
-<tr><td>Siping Road 1239, Shanghai, China (post code: 200092)</td></tr>
-</table>
-<p>Office: Ningjing Building 203</p>
-<p>Email: xinzhang2020(at)tongji.edu.cn</p>
-<hr>
-  
-  
-  
-<h2>Research interests</h2>
-<p>Nonlinear partial differential equations in fluid dynamics, free boundary value problem. </p>
-<p><div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" 
- content="https://orcid.org/0000-0002-6385-9301" href="https://orcid.org/0000-0002-6385-9301" 
-  target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;">
-  <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" 
-    style="width:1em;margin-right:.5em;" alt="ORCID iD icon">https://orcid.org/0000-0002-6385-9301
-</a></div></p>
-<hr>  
+        <!-- Research -->
+        <section id="research">
+            <h2 class="section-title">Research</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                My research focuses on nonlinear partial differential equations arising in fluid dynamics,
+                with particular emphasis on free boundary value problems and multi-phase flows.
+            </p>
+            <div class="research-tags">
+                <span class="tag">Navier-Stokes equations</span>
+                <span class="tag">Free surface problems</span>
+                <span class="tag">Two-phase flows</span>
+                <span class="tag">Compressible fluids</span>
+                <span class="tag">Maximal regularity</span>
+                <span class="tag">Decay estimates</span>
+            </div>
+        </section>
 
-   
-   
-<h2>Events</h2> 
-<p><a href="../seminar.html"> Tongji Seminar on Analysis and PDE</a></p>
-<p><a href="../reading.html"> Reading Seminar </a></p>
-<hr>   
+        <!-- Publications -->
+        <section id="publications">
+            <h2 class="section-title">Publications</h2>
+            
+            <h3 style="font-size: 1rem; color: var(--text-muted); margin: 24px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">Preprints</h3>
+            <ol class="paper-list">
+                <li class="paper-item">
+                    <span class="paper-number"></span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            On the dispersive effect of internal gravity waves for the two-phase Stokes semigroup
+                            <span class="paper-badge badge-submitted">Submitted</span>
+                        </div>
+                        <div class="paper-meta">Saito Hirokazu; Zhang, Xin</div>
+                    </div>
+                </li>
+                <li class="paper-item">
+                    <span class="paper-number"></span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            Local profiles of self-similar solutions of the planar stationary Navier-Stokes equations
+                            <span class="paper-badge badge-submitted">Submitted</span>
+                        </div>
+                        <div class="paper-meta">Li Ming; Peng Linyu; Zhang Ping; Zhang, Xin</div>
+                    </div>
+                </li>
+                <li class="paper-item">
+                    <span class="paper-number"></span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            Decay rates of three dimensional stationary Navier-Stokes flows at the spatial infinity
+                            <span class="paper-badge badge-submitted">Submitted</span>
+                        </div>
+                        <div class="paper-meta">Fujii Mikihiro; Tsurumi Hiroyuki; Zhang, Xin</div>
+                    </div>
+                </li>
+            </ol>
 
-  
+            <h3 style="font-size: 1rem; color: var(--text-muted); margin: 32px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">Journal Articles</h3>
+            <ol class="paper-list" style="counter-reset: paper 10;">
+                <li class="paper-item">
+                    <span class="paper-number">10.</span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            On the solution operators arising from the gas-liquid two-phase problem in unbounded domains with finite depth
+                        </div>
+                        <div class="paper-meta">
+                            Tu Miao; Zhang, Xin &middot; 
+                            <span class="paper-journal">J. Differential Equations</span> <strong>453</strong> (2026), 113837
+                        </div>
+                    </div>
+                </li>
+                <li class="paper-item">
+                    <span class="paper-number">9.</span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            On steady solutions of the Hall-MHD system in Besov spaces
+                        </div>
+                        <div class="paper-meta">
+                            Tan, Jin; Tsurumi Hiroyuki; Zhang, Xin &middot; 
+                            <span class="paper-journal">Z. Angew. Math. Phys.</span> <strong>76</strong> (2025), no. 4, Paper No. 139
+                        </div>
+                    </div>
+                </li>
+                <li class="paper-item">
+                    <span class="paper-number">8.</span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            On the solvability of weak transmission problem in unbounded domains with non-compact boundaries
+                        </div>
+                        <div class="paper-meta">
+                            Saito Hirokazu; Xu Jiang; Zhang, Xin; Zhou Wendu &middot; 
+                            <span class="paper-journal">J. Math. Fluid Mech.</span> <strong>27</strong> (2025), no. 1, Paper No. 9
+                        </div>
+                    </div>
+                </li>
+                <li class="paper-item">
+                    <span class="paper-number">7.</span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            Global wellposedness of the 3D compressible Navier-Stokes equations with free surface in the maximal regularity class
+                        </div>
+                        <div class="paper-meta">
+                            Shibata, Yoshihiro; Zhang, Xin &middot; 
+                            <span class="paper-journal">Nonlinearity</span> <strong>36</strong> (2023), no. 7, 3710–3733
+                        </div>
+                    </div>
+                </li>
+                <li class="paper-item">
+                    <span class="paper-number">6.</span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            The L<sup>p</sup>-L<sup>q</sup> decay estimate for the multidimensional compressible flow with free surface in the exterior domain
+                        </div>
+                        <div class="paper-meta">
+                            Shibata, Yoshihiro; Zhang, Xin &middot; 
+                            <span class="paper-journal">J. Differential Equations</span> <strong>325</strong> (2022), 150–205
+                        </div>
+                    </div>
+                </li>
+                <li class="paper-item">
+                    <span class="paper-number">5.</span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            Unique solvability of elliptic problems associated with two-phase incompressible flows in unbounded domains
+                        </div>
+                        <div class="paper-meta">
+                            Saito, Hirokazu; Zhang, Xin &middot; 
+                            <span class="paper-journal">Discrete Contin. Dyn. Syst.</span> <strong>41</strong> (2021), no. 10, 4609–4643
+                        </div>
+                    </div>
+                </li>
+                <li class="paper-item">
+                    <span class="paper-number">4.</span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            Some free boundary problem for two-phase inhomogeneous incompressible flows
+                        </div>
+                        <div class="paper-meta">
+                            Saito, Hirokazu; Shibata, Yoshihiro; Zhang, Xin &middot; 
+                            <span class="paper-journal">SIAM J. Math. Anal.</span> <strong>52</strong> (2020), no. 4, 3397–3443
+                        </div>
+                    </div>
+                </li>
+                <li class="paper-item">
+                    <span class="paper-number">3.</span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            The R-bounded operator families arising from the study of the barotropic compressible flows with free surface
+                        </div>
+                        <div class="paper-meta">
+                            Zhang, Xin &middot; 
+                            <span class="paper-journal">J. Differential Equations</span> <strong>269</strong> (2020), no. 9, 7059–7105
+                        </div>
+                    </div>
+                </li>
+                <li class="paper-item">
+                    <span class="paper-number">2.</span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            On the persistence of Hölder regular patches of density for the inhomogeneous Navier-Stokes equations
+                        </div>
+                        <div class="paper-meta">
+                            Danchin, Raphaël; Zhang, Xin &middot; 
+                            <span class="paper-journal">J. Éc. polytech. Math.</span> <strong>4</strong> (2017), 781–811
+                        </div>
+                    </div>
+                </li>
+                <li class="paper-item">
+                    <span class="paper-number">1.</span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            Global persistence of geometrical structures for the Boussinesq equation with no diffusion
+                        </div>
+                        <div class="paper-meta">
+                            Danchin, Raphaël; Zhang, Xin &middot; 
+                            <span class="paper-journal">Comm. Partial Differential Equations</span> <strong>42</strong> (2017), no. 1, 68–99
+                        </div>
+                    </div>
+                </li>
+            </ol>
 
- 
+            <h3 style="font-size: 1rem; color: var(--text-muted); margin: 32px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">Book Chapters</h3>
+            <ol class="paper-list">
+                <li class="paper-item">
+                    <span class="paper-number">1.</span>
+                    <div class="paper-content">
+                        <div class="paper-title">
+                            Classical solution for the compressible flow with free surface in three dimensional exterior domain
+                        </div>
+                        <div class="paper-meta">
+                            Shibata, Yoshihiro; Zhang, Xin &middot; 
+                            <span class="paper-journal">Fluids under control</span> (2023), 241–293, Birkhäuser/Springer
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
 
+        <!-- Teaching -->
+        <section id="teaching">
+            <h2 class="section-title">Teaching</h2>
+            
+            <div class="teaching-item">
+                <div class="teaching-header">
+                    <span class="teaching-name">Real Analysis</span>
+                    <span class="teaching-term">Fall 2026</span>
+                </div>
+                <div class="teaching-detail">Graduate course &middot; 64 hours</div>
+            </div>
 
-<h2>Preprints</h2>
-   <ul>
+            <h4 style="font-size: 0.85rem; color: var(--text-muted); margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 0.05em;">Past Courses</h4>
+            <!-- 您可以在这里添加过往课程 -->
+            <p style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;">Past teaching records to be updated.</p>
+        </section>
 
+        <!-- Students -->
+        <section id="students">
+            <h2 class="section-title">Students</h2>
+            
+            <div class="student-group">
+                <h4>Ph.D. Students</h4>
+                <ul class="student-list">
+                    <li class="student-item">
+                        <span><span class="student-name">Li Ming</span></span>
+                        <span class="student-status">Since Sep 2026</span>
+                    </li>
+                    <li class="student-item">
+                        <span><span class="student-name">Xiang Jiaju</span></span>
+                        <span class="student-status">Since Sep 2026</span>
+                    </li>
+                </ul>
+            </div>
 
+            <div class="student-group">
+                <h4>Master Students</h4>
+                <ul class="student-list">
+                    <li class="student-item">
+                        <span><span class="student-name">Wei Zhifan</span></span>
+                        <span class="student-status">Since Sep 2025</span>
+                    </li>
+                    <li class="student-item">
+                        <span><span class="student-name">Huang Junye</span></span>
+                        <span class="student-status">Since Sep 2023 (co-advised with Dr. Yang Xiaochuan)</span>
+                    </li>
+                    <li class="student-item">
+                        <span><span class="student-name">Tu Miao</span></span>
+                        <span class="student-status">Sep 2022 – Mar 2025 (defended)</span>
+                    </li>
+                    <li class="student-item">
+                        <span><span class="student-name">Zhou Wendu</span></span>
+                        <span class="student-status">Sep 2022 – Mar 2025 (defended)</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-  <li class="big"> <p> Saito Hirokazu; Zhang, Xin 
-  <em>  On the dispersive effect of internal gravity waves for the two-phase Stokes semigroup. </em> </a>
- Submitted. </a></p> </li>
-     
-  <li class="big"> <p> Li Ming; Peng Linyu; Zhang Ping; Zhang, Xin <a href="https://arxiv.org/pdf/2602.03341">
-  <em>  Local profiles of self-similar solutions of the planar stationary Navier-Stokes equations. </em> </a>
-  Submitted. </a></p> </li>
-     
-  <li class="big"> <p> Fujii Mikihiro; Tsurumi  Hiroyuki; Zhang, Xin <a href="https://arxiv.org/pdf/2508.17723">
-  <em>  Decay rates of three dimensional stationary Navier-Stokes flows at the spatial infinity. </em> </a>
-   Submitted. </a></p> </li>
-     
-   
+        <!-- Events -->
+        <section id="events">
+            <h2 class="section-title">Events</h2>
+            <ul class="event-list">
+                <li class="event-item">
+                    <a href="#">Tongji Seminar on Analysis and PDE</a>
+                </li>
+                <li class="event-item">
+                    <a href="#">Reading Seminar</a>
+                </li>
+            </ul>
+        </section>
 
-   </ul>
-<h2>Published papers</h2>
-<ol>
+        <footer>
+            <p> Xin Zhang &middot; School of Mathematical Sciences, Tongji University</p>
+            <p style="margin-top: 4px;">Last updated: August 2026</p>
+        </footer>
+    </div>
 
- <li class="big"> <p> Tu Miao; Zhang, Xin <a href="https://doi.org/10.1016/j.jde.2025.113837">
-  <em>  On the solution operators arising from the gas-liquid two-phase problem in unbounded domains with finite depth. </em> </a>
-  J. Differential Equations <strong> 453 </strong> (2026), 113837. </a></p> </li>
-  
-     <li class="big"> <p> Tan, Jin; Tsurumi  Hiroyuki; Zhang, Xin <a href="https://doi.org/10.1007/s00033-025-02519-5">
-  <em> On steady solutions of the Hall-MHD system in Besov spaces. </em> </a>
-   Z. Angew. Math. Phys. <strong>76</strong> (2025), no. 4, Paper No. 139. </a></p> </li>
-  
-    <li class="big"> <p> Saito Hirokazu; Xu Jiang; Zhang, Xin; Zhou Wendu <a href="https://doi.org/10.1007/s00021-024-00914-y">
-  <em> On the solvability of weak transmission problem in unbounded domains with non-compact boundaries. </em> </a>
-   J. Math. Fluid Mech. <strong> 27 </strong> (2025), no. 1, Paper No. 9. </a></p> </li>
-  
-    <li class="big">  <p> Shibata, Yoshihiro; Zhang, Xin <a href="https://iopscience.iop.org/article/10.1088/1361-6544/acd90b">
-  <em> Global wellposedness of the 3D compressible Navier-Stokes equations with free surface in the maximal regularity class. </em> </a>
-   Nonlinearity 36 (2023), no. 7, 3710–3733. </a></p> </li>
-   
-
-    <li class="big"> <p> Shibata, Yoshihiro; Zhang, Xin <a href="https://doi.org/10.1016/j.jde.2022.04.012">
-  <em> The Lp-Lq decay estimate for the multidimensional compressible flow with free surface in the exterior domain. </em> </a>
-   J. Differential Equations <strong> 325 </strong> (2022), 150–205. </a></p> </li>
-  
-    <li class="big">
-    <p> Saito, Hirokazu; Zhang, Xin <a href="http://dx.doi.org/10.3934/dcds.2021051">
-  <em> Unique solvability of elliptic problems associated with two-phase incompressible flows in unbounded domains. </em> </a>
-   Discrete & Continuous Dynamical Systems-A. <strong> 41 </strong> (2021), no. 10, 4609-4643. </a></p> </li> 
-
-  
-  <li class="big">
-    <p> Saito, Hirokazu; Shibata, Yoshihiro; Zhang, Xin <a href="https://doi.org/10.1137/18M1225239">
-  <em> Some free boundary problem for two-phase inhomogeneous incompressible flows. </em> </a>
-  SIAM J. Math. Anal. <strong> 52 </strong> (2020), no. 4, 3397–3443. </a></p> </li>
-  
-
-<li class="big">
- <p> Zhang, Xin <a href="https://doi.org/10.1016/j.jde.2020.05.017">
-  <em>The R-bounded operator families arising from the study of the barotropic compressible flows with free surface.</em> </a>
-   J. Differential Equations <strong> 269 </strong> (2020), no. 9, 7059–7105. </a></p> </li>
-
-  <li class="big">
-<p> Danchin, Raphaël; Zhang, Xin <a href="https://jep.centre-mersenne.org/item/JEP_2017__4__781_0">
-  <em>On the persistence of Hölder regular patches of density for the inhomogeneous Navier-Stokes equations.</em> </a>
-  J. Éc. polytech. Math. <strong> 4 </strong> (2017), 781–811. </a></p> </li>
-  
-
- <li class="big">
-<p> Danchin, Raphaël; Zhang, Xin <a href="https://doi.org/10.1080/03605302.2016.1252394">
-  <em>Global persistence of geometrical structures for the Boussinesq equation with no diffusion.</em> </a>
-  Comm. Partial Differential Equations <strong> 42 </strong> (2017), no. 1, 68–99. </a></p> </li>
-</ol>
-   <h2> Book </h2>
-<ol>
-    <li class="big">  <p> Shibata, Yoshihiro; Zhang, Xin <a href="https://link.springer.com/book/10.1007/978-3-031-27625-5">
-    <em> Classical solution for the compressible flow with free surface in three dimensional exterior domain. </em> </a> 
-    Fluids under control (2023), 241-293, Birkhäuser/Springer. </a></p> </li>
-  </ol>
-<hr>
- 
-<h2>Current Teaching </h2>
-
-<p>Fall 2026,  <a href="https://xinzhang-pde.github.io/Teaching/Real_Analysis.html"> Real Analysis </a>   (graduate course), 64h. </p>
-   
-<h3> <a href="https://xinzhang-pde.github.io/Teaching/Past_Teaching.html"> Past Teaching </a>  </h3>
-
-<hr>
-
-
-<h2>Student </h2>
-   
-<h3> Doctoral thesis </h3>
-<p> Li Ming from September 2026 </p>   
-<p> Xiang Jiaju from September 2026 </p> 
-   
-<h3> Master thesis </h3>
-<p> Wei Zhifan from September 2025 </p>   
-<p> Huang Junye from September 2023, co-advised by Dr. <a href="https://scholar.google.com.sg/citations?user=oxnamocAAAAJ&hl=en">Yang Xiaochuan</a> </p>   
-<p> Tu Miao, Zhou Wendu (from September 2022) thesis defense on March 14, 2025 </p>
-
-<h3> <a href="https://xinzhang-pde.github.io/Student-ug.html"> Undergraduate </a>    </h3>
-
-  
-</body></html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script>
+        // 简单的头像加载失败处理
+        document.getElementById('avatar').addEventListener('error', function() {
+            this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="140" height="140"%3E%3Crect width="140" height="140" fill="%23f5f5f4"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="serif" font-size="48" fill="%2378716c"%3EXZ%3C/text%3E%3C/svg%3E';
+        });
+    </script>
+</body>
+</html>
