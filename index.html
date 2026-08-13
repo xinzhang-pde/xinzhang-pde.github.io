@@ -3,57 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xin Zhang | Tongji University</title>
+    <title>Home | Xin Zhang</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #fafaf9;
-            --surface: #ffffff;
-            --text: #1c1917;
-            --text-secondary: #57534e;
-            --text-muted: #a8a29e;
-            --border: #e7e5e4;
-            --accent: #44403c;
-            --accent-light: #f5f5f4;
-            --link: #57534e;
-            --link-hover: #0c0a09;
-            --badge-bg: #f5f5f4;
-            --badge-text: #57534e;
-            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #555555;
+            --text-muted: #888888;
+            --border: #e0e0e0;
+            --link: #333333;
+            --link-hover: #000000;
+            --nav-bg: #ffffff;
+            --nav-border: #eaeaea;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg: #0c0a09;
-                --surface: #1c1917;
-                --text: #fafaf9;
-                --text-secondary: #d6d3d1;
-                --text-muted: #78716c;
-                --border: #292524;
-                --accent: #d6d3d1;
-                --accent-light: #292524;
-                --link: #d6d3d1;
-                --link-hover: #fafaf9;
-                --badge-bg: #292524;
-                --badge-text: #d6d3d1;
-                --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
-                --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+                --bg: #0a0a0a;
+                --text: #f0f0f0;
+                --text-secondary: #b0b0b0;
+                --text-muted: #777777;
+                --border: #2a2a2a;
+                --link: #cccccc;
+                --link-hover: #ffffff;
+                --nav-bg: #0a0a0a;
+                --nav-border: #222222;
             }
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.65;
+            line-height: 1.7;
             font-size: 15px;
             -webkit-font-smoothing: antialiased;
         }
@@ -70,163 +56,178 @@
             text-underline-offset: 3px;
         }
 
-        .container {
-            max-width: 800px;
+        /* ===== Navigation Bar ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--nav-bg);
+            border-bottom: 1px solid var(--nav-border);
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-inner {
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 24px;
-        }
-
-        /* Header / Hero */
-        .hero {
-            padding: 80px 0 48px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .hero-inner {
             display: flex;
-            gap: 40px;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
         }
 
-        .avatar {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--surface);
-            box-shadow: var(--shadow-md);
-            flex-shrink: 0;
-            background: var(--accent-light);
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero h1 {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 2.2rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
-
-        .hero .title {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            margin-bottom: 16px;
-            line-height: 1.5;
-        }
-
-        .hero .affiliation {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
+        .nav-brand {
             display: flex;
+            align-items: center;
             gap: 12px;
-            flex-wrap: wrap;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.01em;
         }
 
-        .social-links a {
-            display: inline-flex;
+        .nav-brand a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .nav-brand a:hover { text-decoration: none; }
+
+        .nav-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--border);
+            display: flex;
             align-items: center;
-            gap: 6px;
-            padding: 6px 14px;
-            border-radius: 20px;
-            background: var(--badge-bg);
-            color: var(--badge-text);
-            font-size: 0.8rem;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-muted);
+            font-family: 'Source Serif 4', Georgia, serif;
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
             font-weight: 500;
+            color: var(--text-secondary);
             text-decoration: none;
-            border: 1px solid var(--border);
-            transition: all 0.2s;
+            padding: 4px 0;
+            position: relative;
         }
 
-        .social-links a:hover {
-            background: var(--accent-light);
-            transform: translateY(-1px);
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text);
             text-decoration: none;
         }
 
-        .social-links a svg {
-            width: 14px;
-            height: 14px;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--text);
+            transition: width 0.25s ease;
         }
 
-        /* Sections */
-        section {
-            padding: 40px 0;
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .nav-toggle svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--text);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ===== Main Content ===== */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px 60px;
+        }
+
+        .page-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 40px 0 24px;
+            padding-bottom: 12px;
             border-bottom: 1px solid var(--border);
         }
 
-        section:last-of-type {
-            border-bottom: none;
+        /* Photo */
+        .photo {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            display: block;
+            margin: 48px auto 32px;
+            border-radius: 4px;
         }
 
-        .section-title {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1.3rem;
+        h1 {
+            font-size: 1.7rem;
             font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
         }
 
-        .section-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-            margin-left: 4px;
+        .name-ja {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
         }
 
-        /* About */
-        .about-text {
+        .info-block {
+            margin-bottom: 24px;
+        }
+
+        .info-block h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 5px;
+        }
+
+        .info-block p,
+        .info-block div {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .research-text {
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.8;
         }
 
-        .about-text p + p {
-            margin-top: 12px;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 8px 16px;
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .contact-grid .label {
-            color: var(--text-muted);
-            font-weight: 500;
-            text-align: right;
-        }
-
-        /* Research */
-        .research-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 12px;
-        }
-
-        .tag {
-            padding: 4px 12px;
-            border-radius: 4px;
-            background: var(--badge-bg);
-            color: var(--badge-text);
-            font-size: 0.85rem;
-            border: 1px solid var(--border);
-        }
+        .research-text p + p { margin-top: 12px; }
 
         /* Papers */
         .paper-list {
@@ -238,115 +239,99 @@
         .paper-item {
             padding: 16px 0;
             border-bottom: 1px solid var(--border);
-            display: flex;
-            gap: 16px;
+            font-size: 0.9rem;
+            line-height: 1.65;
         }
 
-        .paper-item:last-child {
-            border-bottom: none;
-        }
-
-        .paper-number {
-            font-family: 'Source Serif 4', serif;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            min-width: 28px;
-            text-align: right;
-            padding-top: 2px;
-        }
-
-        .paper-content {
-            flex: 1;
-        }
+        .paper-item:last-child { border-bottom: none; }
 
         .paper-title {
             font-weight: 500;
             color: var(--text);
-            margin-bottom: 6px;
-            line-height: 1.5;
+            margin-bottom: 4px;
         }
 
-        .paper-title a {
-            color: var(--text);
-        }
-
-        .paper-title a:hover {
-            color: var(--link-hover);
-        }
+        .paper-title a { color: var(--text); }
+        .paper-title a:hover { color: var(--link-hover); }
 
         .paper-meta {
-            font-size: 0.85rem;
             color: var(--text-secondary);
+            font-size: 0.85rem;
         }
 
-        .paper-journal {
-            font-style: italic;
-            color: var(--text);
-        }
+        .paper-journal { font-style: italic; }
 
         .paper-badge {
             display: inline-block;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.7rem;
+            padding: 1px 7px;
+            border-radius: 3px;
+            font-size: 0.65rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-left: 8px;
+            letter-spacing: 0.04em;
+            margin-left: 6px;
             vertical-align: middle;
-        }
-
-        .badge-submitted {
             background: #fef3c7;
             color: #92400e;
         }
 
-        .badge-published {
-            background: #dcfce7;
-            color: #166534;
-        }
-
         @media (prefers-color-scheme: dark) {
-            .badge-submitted { background: #451a03; color: #fcd34d; }
-            .badge-published { background: #052e16; color: #86efac; }
+            .paper-badge { background: #451a03; color: #fcd34d; }
         }
 
-        /* Subsection headers */
         .subheader {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            margin: 28px 0 12px;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
+            margin: 28px 0 12px;
             font-weight: 600;
+        }
+
+        /* Talks */
+        .talks-empty {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-style: italic;
+            padding: 16px 0;
+        }
+
+        .talk-item {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .talk-item:last-child { border-bottom: none; }
+
+        .talk-date {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .talk-title {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .talk-venue {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
         }
 
         /* Teaching */
         .teaching-item {
             padding: 14px 0;
             border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
         }
 
-        .teaching-item:last-child {
-            border-bottom: none;
-        }
+        .teaching-item:last-child { border-bottom: none; }
 
-        .teaching-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
-        }
-
-        .teaching-name {
-            font-weight: 500;
-        }
-
-        .teaching-term {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-family: 'Source Serif 4', serif;
-        }
+        .teaching-name { font-weight: 500; }
 
         .teaching-detail {
             font-size: 0.85rem;
@@ -358,12 +343,12 @@
             margin-bottom: 20px;
         }
 
-        .student-group h4 {
+        .student-group h3 {
             font-size: 0.85rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 600;
         }
 
@@ -374,12 +359,12 @@
         }
 
         .student-item {
-            padding: 8px 0;
+            padding: 6px 0;
             font-size: 0.9rem;
             color: var(--text-secondary);
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: baseline;
         }
 
         .student-name {
@@ -392,7 +377,7 @@
             color: var(--text-muted);
         }
 
-        /* Events */
+        /* Events / Other */
         .event-list {
             list-style: none;
             padding: 0;
@@ -400,66 +385,70 @@
         }
 
         .event-item {
-            padding: 10px 0;
+            padding: 12px 0;
             border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
         }
 
-        .event-item:last-child {
-            border-bottom: none;
-        }
+        .event-item:last-child { border-bottom: none; }
 
-        .event-item a {
-            font-weight: 500;
+        .event-item a { font-weight: 500; }
+
+        .event-desc {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 2px;
         }
 
         /* Footer */
         footer {
-            padding: 40px 0;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
             text-align: center;
             color: var(--text-muted);
             font-size: 0.8rem;
-            border-top: 1px solid var(--border);
         }
 
         /* Mobile */
         @media (max-width: 640px) {
-            .hero-inner {
+            .nav-inner {
+                padding: 0 16px;
+                height: 56px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 56px;
+                left: 0;
+                right: 0;
+                background: var(--nav-bg);
+                border-bottom: 1px solid var(--nav-border);
                 flex-direction: column;
-                align-items: center;
-                text-align: center;
+                gap: 0;
+                padding: 8px 16px;
             }
 
-            .hero h1 {
-                font-size: 1.8rem;
+            .nav-links.active { display: flex; }
+
+            .nav-links a {
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border);
             }
 
-            .social-links {
-                justify-content: center;
+            .nav-links a:last-child { border-bottom: none; }
+            .nav-links a::after { display: none; }
+            .nav-toggle { display: block; }
+
+            .container { padding: 0 16px 40px; }
+
+            .photo {
+                max-width: 260px;
+                margin: 32px auto 24px;
             }
 
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 4px;
-            }
-
-            .contact-grid .label {
-                text-align: left;
-                margin-top: 8px;
-            }
-
-            .paper-item {
-                flex-direction: column;
-                gap: 6px;
-            }
-
-            .paper-number {
-                text-align: left;
-            }
-
-            .teaching-header {
-                flex-direction: column;
-                gap: 2px;
-            }
+            h1 { font-size: 1.5rem; }
 
             .student-item {
                 flex-direction: column;
@@ -468,355 +457,80 @@
             }
         }
 
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Print */
-        @media print {
-            .social-links a { border: 1px solid #ccc; }
-            body { background: white; color: black; }
-        }
     </style>
+<base target="_blank">
 </head>
 <body>
-
-    <div class="container">
-        <!-- Hero -->
-        <header class="hero">
-            <div class="hero-inner">
-                <!-- 请替换为您的个人照片路径，如 photo.jpg -->
-                <img src="https://via.placeholder.com/140" alt="Xin Zhang" class="avatar" id="avatar">
-                
-                <div class="hero-content">
-                    <h1>Xin Zhang (<a href="https://math.tongji.edu.cn/info/1127/8229.htm">张鑫</a>)</h1>
-                    <p class="title">
-                        Tenure-track Associate Professor<br>
-                        <a href="https://math.tongji.edu.cn/">School of Mathematical Sciences</a>, Tongji University
-                    </p>
-                    <p class="affiliation">
-                        Nonlinear PDEs &middot; Fluid Dynamics &middot; Free Boundary Problems
-                    </p>
-                    <div class="social-links">
-                        <a href="mailto:xinzhang2020@tongji.edu.cn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            Email
-                        </a>
-                        <a href="https://orcid.org/0000-0002-6385-9301" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.5 4.5h3v9h-3v-9zm1.5 10.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg>
-                            ORCID
-                        </a>
-                        <!-- 请补充您的 Google Scholar 链接 -->
-                        <a href="#" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-                        <!-- 请补充您的 arXiv 作者页面链接 -->
-                        <a href="#" target="_blank" rel="noopener noreferrer">arXiv</a>
-                        <a href="https://math.tongji.edu.cn/" target="_blank" rel="noopener noreferrer">Department</a>
-                    </div>
-                </div>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <div class="nav-brand">
+                <div class="nav-logo">XZ</div>
+                <a href="index.html">Xin Zhang</a>
             </div>
-        </header>
-
-        <!-- About -->
-        <section id="about">
-            <h2 class="section-title">About</h2>
-            <div class="about-text">
-                <p>
-                    I am currently a tenure-track Associate Professor at the <a href="https://math.tongji.edu.cn/">School of Mathematical Sciences</a>, Tongji University, Shanghai.
-                    Before joining Tongji, I was a postdoctoral researcher in Research Institute for Science and Engineering (理工学術院総合研究所), Waseda University (早稲田大学),
-                    working under Prof. <a href="http://www.fluid.sci.waseda.ac.jp/shibata/top.html">Shibata Yoshihiro</a> (柴田 良弘).
-                </p>
-                <p>
-                    I obtained my PhD in mathematics in September 2017 from Université Paris-Est Créteil Val-de-Marne, under the supervision of Prof.
-                    <a href="https://perso.math.u-pem.fr/danchin.raphael/">Danchin Raphaël</a>.
-                </p>
-            </div>
-            
-            <div class="contact-grid">
-                <span class="label">Office</span>
-                <span>Ningjing Building 203, Siping Road 1239, Shanghai 200092, China</span>
-                <span class="label">Email</span>
-                <span><a href="mailto:xinzhang2020@tongji.edu.cn">xinzhang2020@tongji.edu.cn</a></span>
-            </div>
-        </section>
-
-        <!-- Research -->
-        <section id="research">
-            <h2 class="section-title">Research</h2>
-            <p style="color: var(--text-secondary); font-size: 0.95rem;">
-                My research focuses on nonlinear partial differential equations in fluid dynamics, free boundary value problems.
-            </p>
-            <div class="research-tags">
-                <span class="tag">Navier-Stokes equations</span>
-                <span class="tag">Free surface problems</span>
-                <span class="tag">Two-phase flows</span>
-                <span class="tag">Compressible fluids</span>
-                <span class="tag">Maximal regularity</span>
-                <span class="tag">Decay estimates</span>
-            </div>
-        </section>
-
-        <!-- Publications -->
-        <section id="publications">
-            <h2 class="section-title">Publications</h2>
-            
-            <h3 class="subheader">Preprints</h3>
-            <ol class="paper-list">
-                <li class="paper-item">
-                    <span class="paper-number"></span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            Saito Hirokazu; Zhang, Xin &mdash;
-                            <em>On the dispersive effect of internal gravity waves for the two-phase Stokes semigroup.</em>
-                            <span class="paper-badge badge-submitted">Submitted</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="paper-item">
-                    <span class="paper-number"></span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            Li Ming; Peng Linyu; Zhang Ping; Zhang, Xin &mdash;
-                            <a href="https://arxiv.org/pdf/2602.03341" target="_blank" rel="noopener noreferrer"><em>Local profiles of self-similar solutions of the planar stationary Navier-Stokes equations.</em></a>
-                            <span class="paper-badge badge-submitted">Submitted</span>
-                        </div>
-                    </div>
-                </li>
-                <li class="paper-item">
-                    <span class="paper-number"></span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            Fujii Mikihiro; Tsurumi Hiroyuki; Zhang, Xin &mdash;
-                            <a href="https://arxiv.org/pdf/2508.17723" target="_blank" rel="noopener noreferrer"><em>Decay rates of three dimensional stationary Navier-Stokes flows at the spatial infinity.</em></a>
-                            <span class="paper-badge badge-submitted">Submitted</span>
-                        </div>
-                    </div>
-                </li>
-            </ol>
-
-            <h3 class="subheader">Journal Articles</h3>
-            <ol class="paper-list" style="counter-reset: paper 10;">
-                <li class="paper-item">
-                    <span class="paper-number">10.</span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            <a href="https://doi.org/10.1016/j.jde.2025.113837" target="_blank" rel="noopener noreferrer"><em>On the solution operators arising from the gas-liquid two-phase problem in unbounded domains with finite depth.</em></a>
-                        </div>
-                        <div class="paper-meta">
-                            Tu Miao; Zhang, Xin &middot; 
-                            <span class="paper-journal">J. Differential Equations</span> <strong>453</strong> (2026), 113837
-                        </div>
-                    </div>
-                </li>
-                <li class="paper-item">
-                    <span class="paper-number">9.</span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            <a href="https://doi.org/10.1007/s00033-025-02519-5" target="_blank" rel="noopener noreferrer"><em>On steady solutions of the Hall-MHD system in Besov spaces.</em></a>
-                        </div>
-                        <div class="paper-meta">
-                            Tan, Jin; Tsurumi Hiroyuki; Zhang, Xin &middot; 
-                            <span class="paper-journal">Z. Angew. Math. Phys.</span> <strong>76</strong> (2025), no. 4, Paper No. 139
-                        </div>
-                    </div>
-                </li>
-                <li class="paper-item">
-                    <span class="paper-number">8.</span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            <a href="https://doi.org/10.1007/s00021-024-00914-y" target="_blank" rel="noopener noreferrer"><em>On the solvability of weak transmission problem in unbounded domains with non-compact boundaries.</em></a>
-                        </div>
-                        <div class="paper-meta">
-                            Saito Hirokazu; Xu Jiang; Zhang, Xin; Zhou Wendu &middot; 
-                            <span class="paper-journal">J. Math. Fluid Mech.</span> <strong>27</strong> (2025), no. 1, Paper No. 9
-                        </div>
-                    </div>
-                </li>
-                <li class="paper-item">
-                    <span class="paper-number">7.</span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            <a href="https://iopscience.iop.org/article/10.1088/1361-6544/acd90b" target="_blank" rel="noopener noreferrer"><em>Global wellposedness of the 3D compressible Navier-Stokes equations with free surface in the maximal regularity class.</em></a>
-                        </div>
-                        <div class="paper-meta">
-                            Shibata, Yoshihiro; Zhang, Xin &middot; 
-                            <span class="paper-journal">Nonlinearity</span> <strong>36</strong> (2023), no. 7, 3710&ndash;3733
-                        </div>
-                    </div>
-                </li>
-                <li class="paper-item">
-                    <span class="paper-number">6.</span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            <a href="https://doi.org/10.1016/j.jde.2022.04.012" target="_blank" rel="noopener noreferrer"><em>The L<sup>p</sup>-L<sup>q</sup> decay estimate for the multidimensional compressible flow with free surface in the exterior domain.</em></a>
-                        </div>
-                        <div class="paper-meta">
-                            Shibata, Yoshihiro; Zhang, Xin &middot; 
-                            <span class="paper-journal">J. Differential Equations</span> <strong>325</strong> (2022), 150&ndash;205
-                        </div>
-                    </div>
-                </li>
-                <li class="paper-item">
-                    <span class="paper-number">5.</span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            <a href="http://dx.doi.org/10.3934/dcds.2021051" target="_blank" rel="noopener noreferrer"><em>Unique solvability of elliptic problems associated with two-phase incompressible flows in unbounded domains.</em></a>
-                        </div>
-                        <div class="paper-meta">
-                            Saito, Hirokazu; Zhang, Xin &middot; 
-                            <span class="paper-journal">Discrete Contin. Dyn. Syst.</span> <strong>41</strong> (2021), no. 10, 4609&ndash;4643
-                        </div>
-                    </div>
-                </li>
-                <li class="paper-item">
-                    <span class="paper-number">4.</span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            <a href="https://doi.org/10.1137/18M1225239" target="_blank" rel="noopener noreferrer"><em>Some free boundary problem for two-phase inhomogeneous incompressible flows.</em></a>
-                        </div>
-                        <div class="paper-meta">
-                            Saito, Hirokazu; Shibata, Yoshihiro; Zhang, Xin &middot; 
-                            <span class="paper-journal">SIAM J. Math. Anal.</span> <strong>52</strong> (2020), no. 4, 3397&ndash;3443
-                        </div>
-                    </div>
-                </li>
-                <li class="paper-item">
-                    <span class="paper-number">3.</span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            <a href="https://doi.org/10.1016/j.jde.2020.05.017" target="_blank" rel="noopener noreferrer"><em>The R-bounded operator families arising from the study of the barotropic compressible flows with free surface.</em></a>
-                        </div>
-                        <div class="paper-meta">
-                            Zhang, Xin &middot; 
-                            <span class="paper-journal">J. Differential Equations</span> <strong>269</strong> (2020), no. 9, 7059&ndash;7105
-                        </div>
-                    </div>
-                </li>
-                <li class="paper-item">
-                    <span class="paper-number">2.</span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            <a href="https://jep.centre-mersenne.org/item/JEP_2017__4__781_0" target="_blank" rel="noopener noreferrer"><em>On the persistence of H&ouml;lder regular patches of density for the inhomogeneous Navier-Stokes equations.</em></a>
-                        </div>
-                        <div class="paper-meta">
-                            Danchin, Rapha&euml;l; Zhang, Xin &middot; 
-                            <span class="paper-journal">J. &Eacute;c. polytech. Math.</span> <strong>4</strong> (2017), 781&ndash;811
-                        </div>
-                    </div>
-                </li>
-                <li class="paper-item">
-                    <span class="paper-number">1.</span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            <a href="https://doi.org/10.1080/03605302.2016.1252394" target="_blank" rel="noopener noreferrer"><em>Global persistence of geometrical structures for the Boussinesq equation with no diffusion.</em></a>
-                        </div>
-                        <div class="paper-meta">
-                            Danchin, Rapha&euml;l; Zhang, Xin &middot; 
-                            <span class="paper-journal">Comm. Partial Differential Equations</span> <strong>42</strong> (2017), no. 1, 68&ndash;99
-                        </div>
-                    </div>
-                </li>
-            </ol>
-
-            <h3 class="subheader">Book Chapters</h3>
-            <ol class="paper-list">
-                <li class="paper-item">
-                    <span class="paper-number">1.</span>
-                    <div class="paper-content">
-                        <div class="paper-title">
-                            <a href="https://link.springer.com/book/10.1007/978-3-031-27625-5" target="_blank" rel="noopener noreferrer"><em>Classical solution for the compressible flow with free surface in three dimensional exterior domain.</em></a>
-                        </div>
-                        <div class="paper-meta">
-                            Shibata, Yoshihiro; Zhang, Xin &middot; 
-                            <span class="paper-journal">Fluids under control</span> (2023), 241&ndash;293, Birkh&auml;user/Springer
-                        </div>
-                    </div>
-                </li>
-            </ol>
-        </section>
-
-        <!-- Teaching -->
-        <section id="teaching">
-            <h2 class="section-title">Teaching</h2>
-            <div class="teaching-item">
-                <div class="teaching-header">
-                    <span class="teaching-name"><a href="https://xinzhang-pde.github.io/Teaching/Real_Analysis.html">Real Analysis</a></span>
-                    <span class="teaching-term">Fall 2026</span>
-                </div>
-                <div class="teaching-detail">Graduate course &middot; 64 hours</div>
-            </div>
-            <div class="teaching-item" style="border-bottom: none; padding-top: 8px;">
-                <div class="teaching-header">
-                    <span class="teaching-name"><a href="https://xinzhang-pde.github.io/Teaching/Past_Teaching.html">Past Teaching</a></span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Students -->
-        <section id="students">
-            <h2 class="section-title">Students</h2>
-            <div class="student-group">
-                <h4>Ph.D. Students</h4>
-                <ul class="student-list">
-                    <li class="student-item">
-                        <span><span class="student-name">Li Ming</span></span>
-                        <span class="student-status">Since Sep 2026</span>
-                    </li>
-                    <li class="student-item">
-                        <span><span class="student-name">Xiang Jiaju</span></span>
-                        <span class="student-status">Since Sep 2026</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="student-group">
-                <h4>Master Students</h4>
-                <ul class="student-list">
-                    <li class="student-item">
-                        <span><span class="student-name">Wei Zhifan</span></span>
-                        <span class="student-status">Since Sep 2025</span>
-                    </li>
-                    <li class="student-item">
-                        <span><span class="student-name">Huang Junye</span></span>
-                        <span class="student-status">Since Sep 2023, co-advised by Dr. <a href="https://scholar.google.com.sg/citations?user=oxnamocAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Yang Xiaochuan</a></span>
-                    </li>
-                    <li class="student-item">
-                        <span><span class="student-name">Tu Miao</span></span>
-                        <span class="student-status">Sep 2022 &ndash; Mar 2025 (defended)</span>
-                    </li>
-                    <li class="student-item">
-                        <span><span class="student-name">Zhou Wendu</span></span>
-                        <span class="student-status">Sep 2022 &ndash; Mar 2025 (defended)</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="student-group" style="margin-bottom: 0;">
-                <h4><a href="https://xinzhang-pde.github.io/Student-ug.html">Undergraduate Students</a></h4>
-            </div>
-        </section>
-
-        <!-- Events -->
-        <section id="events">
-            <h2 class="section-title">Events</h2>
-            <ul class="event-list">
-                <li class="event-item">
-                    <a href="../seminar.html">Tongji Seminar on Analysis and PDE</a>
-                </li>
-                <li class="event-item">
-                    <a href="../reading.html">Reading Seminar</a>
-                </li>
+            <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+                <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="papers.html" class="">Papers</a></li>
+                <li><a href="talks.html" class="">Talks</a></li>
+                <li><a href="teaching.html" class="">Teaching</a></li>
+                <li><a href="students.html" class="">Students</a></li>
+                <li><a href="other.html" class="">Other</a></li>
             </ul>
-        </section>
+        </div>
+    </nav>
+    <div class="container">
+        <img src="photo.jpg" alt="Xin Zhang" class="photo" onerror="this.style.display='none'">
 
+        <h1>Xin Zhang</h1>
+        <p class="name-ja"><a href="https://math.tongji.edu.cn/info/1127/8229.htm">张鑫</a></p>
+
+        <div class="info-block">
+            <h2>Institution</h2>
+            <p><a href="https://math.tongji.edu.cn/">School of Mathematical Sciences</a>, Tongji University</p>
+        </div>
+
+        <div class="info-block">
+            <h2>E-mail</h2>
+            <p>xinzhang2020 [at] tongji.edu.cn</p>
+        </div>
+
+        <div class="info-block">
+            <h2>Office</h2>
+            <p>Ningjing Building 203, Siping Road 1239, Shanghai 200092, China</p>
+        </div>
+
+        <div class="info-block">
+            <h2>Research</h2>
+            <div class="research-text">
+                <p>Nonlinear partial differential equations in fluid dynamics, free boundary value problems.</p>
+                <p>My research field is the mathematical analysis of nonlinear partial differential equations arising in fluid dynamics. In particular, I mainly study the Navier-Stokes equations, compressible flows with free surface, and two-phase incompressible flows. The methods I use are primarily harmonic analysis and functional analysis, and I am interested in well-posedness in critical spaces, decay estimates, and singular limits.</p>
+            </div>
+        </div>
+
+        <div class="info-block">
+            <h2>Links</h2>
+            <p>
+                <a href="https://orcid.org/0000-0002-6385-9301" target="_blank" rel="noopener noreferrer">ORCID</a> &middot;
+                <a href="#" target="_blank" rel="noopener noreferrer">Google Scholar</a> &middot;
+                <a href="#" target="_blank" rel="noopener noreferrer">arXiv</a> &middot;
+                <a href="https://math.tongji.edu.cn/" target="_blank" rel="noopener noreferrer">Department</a>
+            </p>
+        </div>
         <footer>
             <p>&copy; Xin Zhang &middot; School of Mathematical Sciences, Tongji University</p>
-            <p style="margin-top: 4px;">Last updated: August 2026</p>
+            <p>Last updated: August 2026</p>
         </footer>
     </div>
-
     <script>
-        // Avatar fallback
-        document.getElementById('avatar').addEventListener('error', function() {
-            this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="140" height="140"%3E%3Crect width="140" height="140" fill="%23f5f5f4" rx="70"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="serif" font-size="48" fill="%2378716c"%3EXZ%3C/text%3E%3C/svg%3E';
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
         });
     </script>
 </body>
