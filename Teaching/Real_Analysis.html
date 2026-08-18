@@ -1,34 +1,218 @@
-<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
-<title> Real Analysis</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Analysis | Xin Zhang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='50' fill='%23333333'/%3E%3Ctext x='50' y='68' font-family='Georgia, serif' font-size='55' fill='white' text-anchor='middle'%3EXZ%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #111111;
+            --text-secondary: #444444;
+            --text-muted: #888888;
+            --border: #e5e5e5;
+        }
 
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0a0a0a;
+                --text: #eeeeee;
+                --text-secondary: #aaaaaa;
+                --text-muted: #666666;
+                --border: #2a2a2a;
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: var(--text-muted);
+            transition: text-decoration-color 0.2s;
+        }
+
+        a:hover { text-decoration-color: var(--text); }
+
+        /* Accent bar */
+        .accent-bar { height: 2px; background: var(--border); width: 100%; }
+
+        /* Navbar */
+        .navbar {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-family: "Crimson Text", Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .nav-brand a { text-decoration: none; color: var(--text); }
+
+        .nav-back {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .nav-back:hover { color: var(--text); text-decoration: underline; }
+
+        /* Content */
+        .main { flex: 1; }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .page-title {
+            font-family: "Crimson Text", Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 36px 0 20px;
+            padding-left: 10px;
+            border-left: 2px solid var(--text-muted);
+        }
+
+        .subheader {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 24px 0 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .content-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .content-text p { margin-bottom: 12px; }
+
+        .lecture-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lecture-item {
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .lecture-item:last-child { border-bottom: none; }
+
+        .student-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .student-item {
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .student-item:last-child { border-bottom: none; }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        @media (max-width: 600px) {
+            .nav-inner { padding: 0 16px; }
+            .container { padding: 0 16px 40px; }
+        }
+    </style>
 </head>
-  <div style="width:1150px" > 
- <body>
+<body>
 
-<h1> Real Analysis (graduate course) </h1>
+    <div class="accent-bar"></div>
 
-<hr>   
+    <nav class="navbar">
+        <div class="nav-inner">
+            <div class="nav-brand"><a href="index.html">Xin Zhang（张鑫）</a></div>
+            <a href="index.html" class="nav-back">← Home</a>
+        </div>
+    </nav>
 
-<p>
-Textbook: "Real and Complex Analysis" 3rd Edition by Walter Rudin <br>  
-Syllabus (64h) <br>
-L1: Measurable space, measurable function, Borel set <br>  
-L2: Simple function, integration of positive functions <br> 
-L3  Integration of complex functions <br> 
-L4 Set topology <br>  
-L5 Riesz representation Theorem <br>   
-L6 Properties of Borel measure, Lebesgue measure <br>  
-L7  Lusin Theorem, Lp spaces <br>      
-L8 Complex measure <br>   
-L9 Lebesgue-Radon-Nikodym Theorem   <br>   
-L10 Riesz representation Theorem for complex measure <br>   
-L11 Derivative of measure <br>   
-L12 Differentiable transformation <br>   
-L13 Product measure<br>   
-L14 Fubini Theorem, completion of product measures, convolution <br>  
-L15 Distribution function, Fourier transformation <br>  
-L16 Translation-invariant subspace of L2, Schwarz space <br>  
-</p>   
-<hr> 
+    <div class="main">
+        <div class="container">
+                        <h1 class="page-title">Real Analysis</h1>
+            <p class="subheader">Graduate course · Fall 2026 · 64 hours</p>
+
+            <div class="content-text">
+                <p><strong>Textbook:</strong> <em>Real and Complex Analysis</em> 3rd Edition by Walter Rudin</p>
+            </div>
+
+            <p class="subheader">Syllabus</p>
+            <ol class="lecture-list">
+                <li class="lecture-item">L1: Measurable space, measurable function, Borel set</li>
+                <li class="lecture-item">L2: Simple function, integration of positive functions</li>
+                <li class="lecture-item">L3: Integration of complex functions</li>
+                <li class="lecture-item">L4: Set topology</li>
+                <li class="lecture-item">L5: Riesz representation Theorem</li>
+                <li class="lecture-item">L6: Properties of Borel measure, Lebesgue measure</li>
+                <li class="lecture-item">L7: Lusin Theorem, L<sup>p</sup> spaces</li>
+                <li class="lecture-item">L8: Complex measure</li>
+                <li class="lecture-item">L9: Lebesgue-Radon-Nikodym Theorem</li>
+                <li class="lecture-item">L10: Riesz representation Theorem for complex measure</li>
+                <li class="lecture-item">L11: Derivative of measure</li>
+                <li class="lecture-item">L12: Differentiable transformation</li>
+                <li class="lecture-item">L13: Product measure</li>
+                <li class="lecture-item">L14: Fubini Theorem, completion of product measures, convolution</li>
+                <li class="lecture-item">L15: Distribution function, Fourier transformation</li>
+                <li class="lecture-item">L16: Translation-invariant subspace of L<sup>2</sup>, Schwarz space</li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Xin Zhang</p>
+        <p style="margin-top: 4px; font-size: 0.75rem; color: var(--text-muted);">Last updated: August 2026</p>
+    </footer>
+
+</body>
+</html>
