@@ -1,19 +1,202 @@
-<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
-<title> Undergraduate students </title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undergraduate Students | Xin Zhang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='50' fill='%23333333'/%3E%3Ctext x='50' y='68' font-family='Georgia, serif' font-size='55' fill='white' text-anchor='middle'%3EXZ%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #111111;
+            --text-secondary: #444444;
+            --text-muted: #888888;
+            --border: #e5e5e5;
+        }
 
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0a0a0a;
+                --text: #eeeeee;
+                --text-secondary: #aaaaaa;
+                --text-muted: #666666;
+                --border: #2a2a2a;
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: var(--text-muted);
+            transition: text-decoration-color 0.2s;
+        }
+
+        a:hover { text-decoration-color: var(--text); }
+
+        /* Accent bar */
+        .accent-bar { height: 2px; background: var(--border); width: 100%; }
+
+        /* Navbar */
+        .navbar {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-family: "Crimson Text", Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .nav-brand a { text-decoration: none; color: var(--text); }
+
+        .nav-back {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .nav-back:hover { color: var(--text); text-decoration: underline; }
+
+        /* Content */
+        .main { flex: 1; }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .page-title {
+            font-family: "Crimson Text", Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 36px 0 20px;
+            padding-left: 10px;
+            border-left: 2px solid var(--text-muted);
+        }
+
+        .subheader {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 24px 0 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .content-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .content-text p { margin-bottom: 12px; }
+
+        .lecture-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lecture-item {
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .lecture-item:last-child { border-bottom: none; }
+
+        .student-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .student-item {
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .student-item:last-child { border-bottom: none; }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        @media (max-width: 600px) {
+            .nav-inner { padding: 0 16px; }
+            .container { padding: 0 16px 40px; }
+        }
+    </style>
 </head>
-  <div style="width:1150px" > 
- <body>
+<body>
 
-<h1> Undergraduate students </h1>
-  <h2> Students from Tongji University</h2>
-<hr> 
-<p> Xiang Jiaju, June 2026 </p>
-<p> Li Haozhe, Qin Jiajun, Wei Zhifan, June 2025 </p>
-<p> Hu shenjie, Yan Jingxiang, June 2024 </p>
-<p> Bian jiahui, Huang Junye, Zhao Yihang, June 2023 </p>
-<p> Tu Miao, Wang Yuange, June 2022 </p>
+    <div class="accent-bar"></div>
 
-<hr> 
+    <nav class="navbar">
+        <div class="nav-inner">
+            <div class="nav-brand"><a href="index.html">Xin Zhang（张鑫）</a></div>
+            <a href="index.html" class="nav-back">← Home</a>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="container">
+                        <h1 class="page-title">Undergraduate Students</h1>
+            <p class="subheader">Students from Tongji University</p>
+
+            <ul class="student-list">
+                <li class="student-item">Xiang Jiaju, June 2026</li>
+                <li class="student-item">Li Haozhe, Qin Jiajun, Wei Zhifan, June 2025</li>
+                <li class="student-item">Hu Shenjie, Yan Jingxiang, June 2024</li>
+                <li class="student-item">Bian Jiahui, Huang Junye, Zhao Yihang, June 2023</li>
+                <li class="student-item">Tu Miao, Wang Yuange, June 2022</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Xin Zhang</p>
+        <p style="margin-top: 4px; font-size: 0.75rem; color: var(--text-muted);">Last updated: August 2026</p>
+    </footer>
+
+</body>
+</html>
