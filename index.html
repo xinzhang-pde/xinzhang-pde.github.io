@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xin Zhang</title>
+    <title>Xin Zhang | 张鑫 | Tongji University</title>
+    <meta name="description" content="Tenure-track Associate Professor at Tongji University. Research interests: nonlinear partial differential equations, fluid dynamics, free boundary problems.">
+    <meta name="keywords" content="Xin Zhang, 张鑫, PDE, fluid dynamics, Tongji University, Navier-Stokes, free boundary, mathematical analysis">
+    <meta name="author" content="Xin Zhang">
+    <meta property="og:title" content="Xin Zhang | 张鑫 | Tongji University">
+    <meta property="og:description" content="Tenure-track Associate Professor at Tongji University. Research: nonlinear PDEs, fluid dynamics, free boundary problems.">
+    <meta property="og:type" content="profile">
     <style>
         :root {
             --bg: #ffffff;
@@ -332,6 +338,25 @@
             color: var(--text-muted);
         }
 
+        /* Talks */
+        .talk-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .talk-item {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .talk-item:last-child {
+            border-bottom: none;
+        }
+
         /* Events */
         .event-list {
             list-style: none;
@@ -354,6 +379,78 @@
             text-align: center;
             color: var(--text-muted);
             font-size: 0.78rem;
+        }
+
+        /* Print */
+        @media print {
+            .navbar,
+            footer,
+            .nav-toggle {
+                display: none !important;
+            }
+
+            .page-section {
+                display: block !important;
+                animation: none;
+                page-break-inside: avoid;
+            }
+
+            body {
+                font-size: 11pt;
+                line-height: 1.5;
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0 24pt;
+            }
+
+            a {
+                text-decoration: underline;
+                color: #000 !important;
+                text-decoration-color: #000;
+            }
+
+            .photo {
+                width: 80pt;
+                height: 80pt;
+                margin: 12pt auto;
+            }
+
+            .page-title {
+                font-size: 14pt;
+                margin: 18pt 0 12pt;
+                border-left-width: 2pt;
+            }
+
+            .subheader {
+                font-size: 10pt;
+                margin: 14pt 0 6pt;
+            }
+
+            .paper-item,
+            .teaching-item,
+            .talk-item,
+            .event-item,
+            .student-item {
+                padding: 4pt 0;
+                font-size: 10pt;
+            }
+
+            .info-block {
+                margin-bottom: 10pt;
+            }
+
+            .info-block h2 {
+                font-size: 9pt;
+            }
+
+            .info-block p,
+            .info-block div {
+                font-size: 10pt;
+            }
         }
 
         /* Mobile */
@@ -387,6 +484,7 @@
             }
         }
     </style>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='50' fill='%23333333'/%3E%3Ctext x='50' y='68' font-family='Georgia, serif' font-size='55' fill='white' text-anchor='middle'%3EXZ%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -606,7 +704,34 @@
             <!-- ===== TALKS ===== -->
             <section class="page-section" id="page-talks">
                 <h1 class="page-title">Talks</h1>
-                <p class="talks-empty">No current items.</p>
+
+                <p class="subheader">In Conferences</p>
+                <ul class="talk-list">
+                    <li class="talk-item">Mini Workshop on nonlinear PDEs related to fluid dynamics, Tokyo Institute of Technology, Japan, Jul. 27, 2024.</li>
+                    <li class="talk-item">Mathematical Analysis of Viscous Incompressible Fluid, RIMS, Kyoto, Japan, Dec. 11-13, 2023.</li>
+                    <li class="talk-item">International Workshop on Multiphase Flows: Analysis, Modelling and Numerics, Waseda University, Tokyo, Japan, Dec. 5-9, 2022.</li>
+                    <li class="talk-item">Germany-Japan Workshop on Free and Singular Boundaries in Fluid Dynamics and Related Topics, Waseda University, Tokyo, Japan, Aug. 10-12, 2022 (online).</li>
+                    <li class="talk-item">Siam Conference on Analysis of Partial Differential Equations (PD22), Berlin, Germany, Mar. 14-18, 2022 (online).</li>
+                    <li class="talk-item">Mathematical Analysis of Viscous Incompressible Fluid, RIMS, Kyoto, Japan, Dec. 7-9, 2020 (online).</li>
+                    <li class="talk-item">Waseda Workshop on Partial Differential Equations, Waseda University, Tokyo, Japan, Dec. 17, 2019.</li>
+                    <li class="talk-item">Mathematical Analysis of Viscous Incompressible Fluid, RIMS, Kyoto, Japan, Nov. 25-27, 2019.</li>
+                    <li class="talk-item">Inhomogeneous Flows: Asymptotic Models and Interfaces Evolution, Luminy, France, Sep. 23-27, 2019.</li>
+                    <li class="talk-item">Mathematical analysis in fluid and gas dynamics, RIMS, Kyoto, Japan, Jul. 4-6, 2018.</li>
+                    <li class="talk-item">Japanese-Indonesian International Workshop on Mathematical Fluid Dynamics, Waseda University, Tokyo, Japan, Mar. 12-13, 2018.</li>
+                    <li class="talk-item">International Workshop on Multiphase Flows: Analysis, Modelling and Numerics, Waseda University, Tokyo, Japan, Nov. 28-Dec. 1, 2017.</li>
+                    <li class="talk-item">Mathflows 2017, Bedlewo, Poland, Jan. 16-20, 2017.</li>
+                    <li class="talk-item">Mathflows 2015, Iles de Porquerolles, France, Sep. 13-18, 2015.</li>
+                    <li class="talk-item">Young Researchers in Fluid Dynamics, Darmstadt, Germany, Jun. 18-19, 2015.</li>
+                </ul>
+
+                <p class="subheader">In Seminars</p>
+                <ul class="talk-list">
+                    <li class="talk-item">Fluid-Math seminar, Ochanomizu University, Tokyo, Japan, Jan. 12, 2024.</li>
+                    <li class="talk-item">Analysis and PDE seminar, Peking University, China, Jan. 3, 2018.</li>
+                    <li class="talk-item">Analyse réelle, Toulouse, France, Mar. 13, 2017.</li>
+                    <li class="talk-item">Groupe de Travail des Thésards du LJLL, Paris VI, France, Apr. 19, 2016.</li>
+                    <li class="talk-item">Séminaire des doctorants, Paris XII, France, Dec. 16, 2015.</li>
+                </ul>
             </section>
 
             <!-- ===== TEACHING ===== -->
@@ -773,6 +898,13 @@
         document.addEventListener('DOMContentLoaded', function() {
             const hash = window.location.hash.replace('#', '') || 'home';
             showPage(hash);
+        });
+
+        // Disable right-click on images
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
         });
     </script>
 </body>
