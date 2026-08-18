@@ -1,39 +1,206 @@
-<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
-<title> Reading Seminar</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Seminar | Xin Zhang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='50' fill='%23333333'/%3E%3Ctext x='50' y='68' font-family='Georgia, serif' font-size='55' fill='white' text-anchor='middle'%3EXZ%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #111111;
+            --text-secondary: #444444;
+            --text-muted: #888888;
+            --border: #e5e5e5;
+        }
 
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0a0a0a;
+                --text: #eeeeee;
+                --text-secondary: #aaaaaa;
+                --text-muted: #666666;
+                --border: #2a2a2a;
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: var(--text-muted);
+            transition: text-decoration-color 0.2s;
+        }
+
+        a:hover { text-decoration-color: var(--text); }
+
+        .accent-bar { height: 2px; background: var(--border); width: 100%; }
+
+        .navbar {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-family: "Crimson Text", Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .nav-brand a { text-decoration: none; color: var(--text); }
+
+        .nav-back {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .nav-back:hover { color: var(--text); text-decoration: underline; }
+
+        .main { flex: 1; }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .page-title {
+            font-family: "Crimson Text", Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 36px 0 20px;
+            padding-left: 10px;
+            border-left: 2px solid var(--text-muted);
+        }
+
+        .subheader {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 24px 0 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .content-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .content-text p { margin-bottom: 12px; }
+
+        .lecture-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lecture-item {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        .lecture-item:last-child { border-bottom: none; }
+
+        .lecture-date {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        @media (max-width: 600px) {
+            .nav-inner { padding: 0 16px; }
+            .container { padding: 0 16px 40px; }
+        }
+    </style>
 </head>
-  <div style="width:1150px" > 
- <body>
+<body>
 
-<h1> Reading Seminar </h1>
+    <div class="accent-bar"></div>
 
-   
-<hr>   
+    <nav class="navbar">
+        <div class="nav-inner">
+            <div class="nav-brand"><a href="index.html">Xin Zhang（张鑫）</a></div>
+            <a href="index.html" class="nav-back">← Home</a>
+        </div>
+    </nav>
 
-<p>
-Title: Seminar on Microlocal Analysis <br>
-Place: Ningjing 115 <br>
-Reference: the book "An introduction to Semiclassical and Microlocal Analysis" by Andre Martinez.<br>
-  
-L1（9:00-11:00, May 16th, 2023）: Space of symbols, Semiclassical expansions of symbols <br>  
-L2 (9:00-11:00, May 23rd, 2023): Oscillatory Integrals, Pseudodifferential operators <br> 
-L3 (10:10-11:40, June 6th, 2023): Adjoint of pseudodifferential operators, Quadratic phase aysmptotics <br> 
-L4 (9:00-11:30, June 13th, 2023): Composition of pseudodifferential operators  <br> 
-L5 (9:00-11:00, September 18th, 2023): Change of Quantization (I) <br>  
-L6 (9:00-11:00, September 25th, 2023):  Change of Quantization (II)  <br>   
-L7 (9:00-11:00, October 16th, 2023):  L2 Continuity (I)  <br>  
-L8 (9:00-11:00, October 23rd, 2023):  L2 Continuity (II), Frequency set  <br>    
-L9 (9:00-11:00, November 6th, 2023):  The Global F.B.I. Transform  <br>  
-L10 (9:00-11:00, November 13rd, 2023):  Microsupport and Action of F.B.I. Transform on $\Psi$DO  <br>   
-L11 (9:00-11:00, November 20th, 2023):  Action of F.B.I. Transform on F.I.O (I)  <br>     
-L12 (9:00-11:00, November 27th, 2023):  Action of F.B.I. Transform on F.I.O (II)  <br>   
-L13 (9:00-11:00, December 4th, 2023):  Microsupport Exponential Estimates (I) <br>    
-L14 (9:00-11:00, December 25th, 2023):  Microsupport Exponential Estimates (II) <br>     
-</p>   
-<hr>  
+    <div class="main">
+        <div class="container">
+                        <h1 class="page-title">Reading Seminar</h1>
+            <p class="subheader">Seminar on Microlocal Analysis · 2023</p>
 
+            <div class="content-text">
+                <p><strong>Place:</strong> Ningjing 115</p>
+                <p><strong>Reference:</strong> <em>An Introduction to Semiclassical and Microlocal Analysis</em> by Andre Martinez</p>
+            </div>
 
+            <p class="subheader">Schedule</p>
+            <ol class="lecture-list">
+                <li class="lecture-item"><span class="lecture-date">May 16, 2023</span> · Space of symbols, Semiclassical expansions of symbols</li>
+                <li class="lecture-item"><span class="lecture-date">May 23, 2023</span> · Oscillatory Integrals, Pseudodifferential operators</li>
+                <li class="lecture-item"><span class="lecture-date">June 6, 2023</span> · Adjoint of pseudodifferential operators, Quadratic phase asymptotics</li>
+                <li class="lecture-item"><span class="lecture-date">June 13, 2023</span> · Composition of pseudodifferential operators</li>
+                <li class="lecture-item"><span class="lecture-date">Sep 18, 2023</span> · Change of Quantization (I)</li>
+                <li class="lecture-item"><span class="lecture-date">Sep 25, 2023</span> · Change of Quantization (II)</li>
+                <li class="lecture-item"><span class="lecture-date">Oct 16, 2023</span> · L<sup>2</sup> Continuity (I)</li>
+                <li class="lecture-item"><span class="lecture-date">Oct 23, 2023</span> · L<sup>2</sup> Continuity (II), Frequency set</li>
+                <li class="lecture-item"><span class="lecture-date">Nov 6, 2023</span> · The Global F.B.I. Transform</li>
+                <li class="lecture-item"><span class="lecture-date">Nov 13, 2023</span> · Microsupport and Action of F.B.I. Transform on &Psi;DO</li>
+                <li class="lecture-item"><span class="lecture-date">Nov 20, 2023</span> · Action of F.B.I. Transform on F.I.O (I)</li>
+                <li class="lecture-item"><span class="lecture-date">Nov 27, 2023</span> · Action of F.B.I. Transform on F.I.O (II)</li>
+                <li class="lecture-item"><span class="lecture-date">Dec 4, 2023</span> · Microsupport Exponential Estimates (I)</li>
+                <li class="lecture-item"><span class="lecture-date">Dec 25, 2023</span> · Microsupport Exponential Estimates (II)</li>
+            </ol>
+        </div>
+    </div>
 
+    <footer>
+        <p>&copy; Xin Zhang</p>
+        <p style="margin-top: 4px; font-size: 0.75rem; color: var(--text-muted);">Last updated: August 2026</p>
+    </footer>
 
+</body>
+</html>
