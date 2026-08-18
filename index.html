@@ -226,6 +226,39 @@
 
         .research-text p + p { margin-top: 12px; }
 
+        /* News */
+        .news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .news-item {
+            padding: 6px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 12px;
+            align-items: baseline;
+        }
+
+        .news-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .news-date {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+            min-width: 70px;
+        }
+
+        .news-text {
+            flex: 1;
+        }
+
         /* Papers */
         .paper-list {
             list-style: none;
@@ -550,8 +583,8 @@
                     <h2>Links</h2>
                     <p>
                         <a href="https://orcid.org/0000-0002-6385-9301" target="_blank" rel="noopener noreferrer">ORCID</a> &middot;
-                        <a href="#" target="_blank" rel="noopener noreferrer">Google Scholar</a> &middot;
-                        <a href="#" target="_blank" rel="noopener noreferrer">arXiv</a> &middot;
+                        <!-- <a href="#" target="_blank" rel="noopener noreferrer">Google Scholar</a> &middot; -->
+                        <!-- <a href="#" target="_blank" rel="noopener noreferrer">arXiv</a> &middot; -->
                         <a href="https://math.tongji.edu.cn/" target="_blank" rel="noopener noreferrer">Department</a>
                     </p>
                 </div>
