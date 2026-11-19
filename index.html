@@ -149,6 +149,12 @@
             max-width: 640px;
             margin: 0 auto;
             padding: 0 20px 60px;
+            transition: max-width 0.3s ease;
+        }
+
+        /* Students 页面使用更宽的布局 */
+        .container.wide {
+            max-width: 670px;
         }
 
         .page-section {
@@ -362,18 +368,28 @@
             padding: 5px 0;
             font-size: 0.88rem;
             color: var(--text-secondary);
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1em;
             align-items: baseline;
+            width: 100%;
+        }
+
+        .student-item > span:first-child {
+            white-space: nowrap;
         }
 
         .student-name {
             color: var(--text);
+            white-space: nowrap;
         }
 
         .student-status {
             font-size: 0.8rem;
             color: var(--text-muted);
+            white-space: nowrap;
+            text-align: right;
+            justify-self: end;
         }
 
         /* Talks */
@@ -516,9 +532,13 @@
             .photo { width: 120px; height: 120px; }
 
             .student-item {
-                flex-direction: column;
-                align-items: flex-start;
+                grid-template-columns: 1fr;
                 gap: 1px;
+            }
+
+            .student-status {
+                justify-self: start;
+                text-align: left;
             }
         }
     </style>
@@ -885,6 +905,14 @@ I obtained my PhD in mathematics in September 2017 from Université Paris-Est Cr
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             const target = document.getElementById('page-' + pageId);
             if (target) target.classList.add('active');
+
+            // Students 页面使用更宽的容器
+            const container = document.querySelector('.container');
+            if (pageId === 'students') {
+                container.classList.add('wide');
+            } else {
+                container.classList.remove('wide');
+            }
 
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.classList.toggle('active', link.getAttribute('data-page') === pageId);
